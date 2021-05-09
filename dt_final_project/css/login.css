@@ -1,0 +1,40 @@
+section.main {
+    align-items: center;
+	margin: 13% 35% 5% 35%;
+    border: 3px solid red;
+}
+
+section.main article {
+	margin-top: 1rem;
+}
+
+section.main article:first-child {
+	align-self: flex-start;
+}
+
+section.main article:last-child {
+	align-self: flex-start;
+}
+
+section.main article a {
+	color: black;
+}
+
+section.main article a:hover {
+	color: blue;
+}
+
+#next {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+#next input[type=submit] {
+    color: white;
+    padding:0.7rem 1.8rem; 
+    background:#d8311e; 
+    border: none;
+    cursor:pointer;
+    font-family: tasker;
+    font-size: 1rem;
+}

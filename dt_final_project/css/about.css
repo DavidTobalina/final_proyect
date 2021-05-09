@@ -1,0 +1,15 @@
+body {
+	background-image: url('../images/fondo2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+section.main {
+	margin: 10% 20% 5% 20%;
+}
+
+section.main > article > span:last-child {
+	font-size: 2rem;
+	color: #d8311e;
+}

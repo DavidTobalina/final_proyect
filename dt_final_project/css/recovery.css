@@ -1,0 +1,23 @@
+section.main {
+    align-items: center;
+	margin: 15% 30% 5% 30%;
+    border: 3px solid red;
+}
+
+section.main article {
+    align-self: flex-start;
+}
+
+#next {
+    text-align: right;
+}
+
+#next input[type=submit] {
+    color: white;
+    padding:0.7rem 1.8rem; 
+    background:#d8311e; 
+    border: none;
+    cursor:pointer;
+    font-family: tasker;
+    font-size: 1rem;
+}

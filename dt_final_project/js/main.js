@@ -20,73 +20,75 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  //Charge task page at main when clicking on the left menu
-  document.querySelector("#menu > .menu > li:first-child").addEventListener("click", function(){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if(this.readyState==4 && this.status==200) {
-        document.querySelector("#inside").innerHTML="<div>Create task</div><div><h2>Your tasks</h2>"+this.response+"</div>";
-        deleteT();
-        create();
-      }
-    };
-    xhttp.open("GET", "../pages/showTasks.php", true);
-    xhttp.send();
-  });
-
-  if(document.querySelectorAll("#inside > div:last-child > div > div > .checkTask")){
-    deleteT();
-  }
-
-  //Charge create task page at main when clicking create task
-  if(document.querySelector("#inside > div:first-child")){
-    create();
-  }
-
-  function deleteT() {
-    var ts = document.querySelectorAll("#inside > div:last-child > div > div > .checkTask");
-    for (var i = 0; i < ts.length; i++) {
-      ts[i].addEventListener("click", function () {
-        var str = this.parentNode.querySelector("p").innerHTML;
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-          if (this.readyState == 4 && this.status == 200) {
-            document.querySelector("#inside").innerHTML = "<div>Create task</div><div><h2>Your tasks</h2>" + this.response + "</div>";
-            updatePoints();
-            create();
-          }
-        };
-        xhttp.open("GET", "../pages/showTasks.php?text=" + str.substr(0, str.indexOf(' ')), true);
-        xhttp.send();
-      });
-    }
-  }
-
-  function updatePoints(){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        document.querySelector("#myDropdown > a:nth-child(2)").innerHTML = this.response;
-        updatePoints();
-        create();
-      }
-    };
-    xhttp.open("GET", "../pages/updatePoints.php", true);
-    xhttp.send();
-  }
-
-  function create(){
-    document.querySelector("#inside > div:first-child").addEventListener("click", function(){
+    //Charge task page at main when clicking on the left menu
+    document.querySelector("#menu > .menu > li:first-child").addEventListener("click", function(){
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if(this.readyState==4 && this.status==200) {
-          document.querySelector("#inside > div:last-child").innerHTML=this.response;
+          document.querySelector("#inside").innerHTML="<div>Create task</div><div><h2>Your tasks</h2>"+this.response+"</div>";
+          deleteTask();
+          create();
         }
       };
-      xhttp.open("GET", "../pages/createTask.php", true);
+      xhttp.open("GET", "../pages/showTasks.php", true);
       xhttp.send();
     });
-  }
+  
+    function create(){
+      document.querySelector("#inside > div:first-child").addEventListener("click", function(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if(this.readyState==4 && this.status==200) {
+            document.querySelector("#inside > div:last-child").innerHTML=this.response;
+          }
+        };
+        xhttp.open("GET", "../pages/createTask.php", true);
+        xhttp.send();
+      });
+    }
+  
+    //Charge create task page at main when clicking create task
+    if(document.querySelector("#inside > div:first-child")){
+      create();
+    }
+  
+    deleteTask();
+  
+    function deleteTask() {
+      var ts = document.querySelectorAll("#inside > div:last-child > div > div > .checkTask");
+      if(!ts) return;
+      for (var i=0;i<ts.length;i++) {
+        ts[i].addEventListener("click", function () {
+          var str = this.parentNode.querySelector("p").innerHTML;
+          var d = this.parentNode.querySelector(".hiddenSpan1").innerHTML;
+          var h = this.parentNode.querySelector(".hiddenSpan2").innerHTML;
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              document.querySelector("#inside").innerHTML = "<div>Create task</div><div><h2>Your tasks</h2>" + this.response + "</div>";
+              updatePoints();
+              create();
+            }
+          };
+          xhttp.open("GET", "../pages/showTasks.php?text=" + str.substr(0, str.indexOf(' ')) + "&date=" + d + "&time=" + h, true);
+          xhttp.send();
+        });
+      }
+    }
+  
+    function updatePoints(){
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.querySelector("#myDropdown > a:nth-child(2)").innerHTML = this.response;
+          //updatePoints();
+          create();
+          deleteTask();
+        }
+      };
+      xhttp.open("GET", "../pages/updatePoints.php", true);
+      xhttp.send();
+    }
 
     //Charge notes page at main when clicking on the left menu
     document.querySelector("#menu > .menu > li:nth-child(2)").addEventListener("click", function(){

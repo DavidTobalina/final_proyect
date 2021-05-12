@@ -237,16 +237,28 @@ function getDateCalendar($cod) {
 }
 
 function deleteTask($text, $date, $time, $cod){
+	$connection_string='mysql:dbname=dt_final_project;host=127.0.0.1:3306';
+	$u='root';
+	$k='';
+	try{
+		$bd=new PDO($connection_string,$u,$k);
+		$sql="select * from tasks where text='$text' and date='$date' and time='$time' and codUser='$cod';";
+		$resul=$bd->query($sql);
+		foreach ($resul as $row) {
+			deleteTaskById($row['codTask']);
+		}
+	}catch(PDOException $e){
+		echo "Error in the database: ".$e->getMessage();
+	}
+}
+
+function deleteTaskById($cod){
 	$connection_string='mysql:dbname=dt_final_project;host=127.0.0.1';
 	$u='root';
 	$k='';
 	try{
 		$bd=new PDO($connection_string,$u,$k);
-		if($time==1 && $date==1){
-			$sql="delete from tasks where text='$text' and codUser='$cod';";
-		}else{
-			$sql="delete from tasks where text='$text' and date='$date' and time='$time' and codUser='$cod';";
-		}
+		$sql="delete from tasks where codTask='$cod';";
 		$all=$bd->query($sql);
 		return $all;
 	}catch(PDOException $e){

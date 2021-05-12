@@ -286,6 +286,10 @@ body {
 	margin-left: 1rem;
 }
 
+.task > p{
+	display: inline-block;
+}
+
 .check {
 	height: 1.5rem;
 	width: 1.5rem;
@@ -297,6 +301,7 @@ body {
 }
 
 .checkTask {
+	display: inline-block;
 	height: 1.5rem;
 	width: 1.5rem;
 	background-image: url("../images/comprobado.png");
@@ -324,6 +329,14 @@ body {
 .notCrossed{
 	text-decoration: none;
 	color: black;
+}
+
+.hiddenSpan1{
+	display: none;
+}
+
+.hiddenSpan2{
+	display: none;
 }
 
 #next {

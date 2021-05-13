@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
               create();
             }
           };
-          xhttp.open("GET", "../pages/showTasks.php?text=" + str.substr(0, str.indexOf(' ')) + "&date=" + d + "&time=" + h, true);
+          xhttp.open("GET", "../pages/showTasks.php?text=" + str.substr(0, str.indexOf(' at')) + "&date=" + d + "&time=" + h, true);
           xhttp.send();
         });
       }

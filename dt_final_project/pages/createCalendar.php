@@ -66,17 +66,21 @@
             $date = "$year-$month-$currentDayRel";
 
             $cod=getUserCod($_SESSION['user']);
-            $arr = getDateCalendar($cod);
+            $arr = getTasks($cod);
+
+            $text1 = "<td rel='$date'>$currentDay</td>";
+            $text2 = "<td rel='$date' style='color:red;'><div class='dropdownCalendar'><span>".$currentDay."</span><div class='dropdownCalendar-content'>";
+            $long = strlen($text2);
 
             foreach($arr as $row){
-                array_push($a, $row[0]);
+                if($row['date']==$date) $text2 .= "<p><span style='color:red'>".$row["text"]."</span> at ".substr($row["time"] , 0, 5)."</p>";
             }
-            $a = array_unique($a);
-            $clave = array_search($date, $a);
-            if($clave!==false){
-                $calendar .= "<td rel='$date' style='color:red;'>$currentDay</td>";
-            }else{
-                $calendar .= "<td rel='$date'>$currentDay</td>";
+
+            if(strlen($text2) > $long) {
+                $text2 .="</div></div></td>";
+                $calendar .= $text2;
+            }else {
+                $calendar .= $text1;
             }
 
             // Incrementar contadores

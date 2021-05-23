@@ -14,12 +14,9 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction:column;
-	background-image: url('../images/fondo.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	font-family: tasker;
-	padding-top: 16rem;
+    font-family: tasker;
+    background: gainsboro;
+    padding-top: 17rem;
 }
 
 header {
@@ -36,7 +33,7 @@ header {
 }
 
 header h1 {
-	font-size: 5.5rem;
+	font-size:5.5rem;
 	color: #d8311e;
 }
 
@@ -65,46 +62,6 @@ header h1 {
 	color: #d8311e;
 	height: 4rem;
 	width: 8rem;
-}
-
-section.main {
-	display: flex;
-	flex-direction: column;
-	margin: 0% 20% 5% 20%;
-	min-width: 250px;
-}
-
-section.main article {
-	padding: 2rem;
-	background-color: white;
-	margin: 1.2em;
-	font-size: 1.2rem;
-	box-shadow: 5px 10px 18px #888888;
-}
-
-section.main article:first-child {
-	font-size: 1.5rem;
-}
-
-section.main > article > h2,h3 {
-	margin-bottom: 1rem;
-}
-
-section.main > article > p {
-	margin-bottom: 0.6rem;
-}
-
-section.main > article > img {
-	width: 70%;
-}
-
-section.main > article:last-child > img {
-	width: 100%;
-}
-
-section.main > article > div > img {
-	width: 50%;
-	float: left;
 }
 
 footer{
@@ -141,9 +98,9 @@ a:hover {
   }
   
   @media screen and (max-width: 680px) {
-	header h1 {
-		font-size: 3rem;
-	}
+    header h1 {
+        font-size:4rem;
+    }
 	#links {
 		display: block;
 		height: auto;
@@ -167,10 +124,6 @@ a:hover {
 		height: unset;
 		width: unset;
 	}
-	section.main > article > div > img {
-		width: 100%;
-		float: none;
-	}
 	#links.topnav > .icon > a:not(:first-child) {display: none;}
 	#links.topnav > .icon {
 	  	display: block;
@@ -179,16 +132,13 @@ a:hover {
 
   @media screen and (max-width: 1200px) {
 	body {
-		padding-top: 14rem;
-	}
-	section.main > article > img {
-		width: 100%;
+		padding-top: 15rem;
 	}
   }
 
   @media screen and (max-width: 760px) {
 	body {
-		padding-top: 12rem;
+		padding-top: 13rem;
 	}
 	footer {
 		height: auto;
@@ -203,10 +153,10 @@ a:hover {
 		margin-bottom: 1rem;
 	}
   }
-
+  
   @media screen and (max-width: 680px) {
-	body {
-		padding-top: 9rem;
+    body {
+		padding-top: 10rem;
 	}
 	#links.responsive {position: relative;}
 	#links.responsive > .icon {

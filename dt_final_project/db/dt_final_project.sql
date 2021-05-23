@@ -2,8 +2,8 @@
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2021 a las 23:17:46
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 23-05-2021 a las 19:11:45
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.2
 
@@ -39,10 +39,10 @@ CREATE TABLE `list` (
 --
 
 INSERT INTO `list` (`codProduct`, `text`, `amount`, `codUser`) VALUES
-(17002, 'tomato', 3, 1),
-(17003, 'milk', 6, 1),
-(17004, 'chicken', 1, 1),
-(17005, 'bananas', 3, 1);
+(17041, 'milk', 6, 1),
+(17042, 'cheese', 2, 1),
+(17043, 'chicken', 1, 1),
+(17044, 'bananas', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -78,6 +78,15 @@ CREATE TABLE `tasks` (
   `codUser` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `tasks`
+--
+
+INSERT INTO `tasks` (`codTask`, `text`, `date`, `time`, `codUser`) VALUES
+(319, 'lkÃ±', '2021-05-24', '18:33:00', 1),
+(320, 'bhygtrf', '2021-05-24', '19:31:00', 1),
+(328, 't45', '2021-05-25', '19:32:00', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -97,8 +106,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`code`, `name`, `passwd`, `mail`, `points`) VALUES
-(1, 'juan', '$2y$10$9STReNpS32F3g74gHgzMKuZjvWoTRfD8gRyKY/wlo3SEwLKq5aJGK', 'invented@gmail.com', 350),
-(3, 'maria', '$2y$10$O5eLnUplv5oa.4o6BBOTB.opeR2oEourcoRfOOt7/V.oLIxQ7U1b2', 'invented@gmail.com', 25);
+(1, 'juan', '$2y$10$9STReNpS32F3g74gHgzMKuZjvWoTRfD8gRyKY/wlo3SEwLKq5aJGK', 'invented@gmail.com', 250),
+(3, 'maria', '$2y$10$O5eLnUplv5oa.4o6BBOTB.opeR2oEourcoRfOOt7/V.oLIxQ7U1b2', 'invented@gmail.com', 0);
 
 --
 -- Índices para tablas volcadas
@@ -139,19 +148,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `list`
 --
 ALTER TABLE `list`
-  MODIFY `codProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17006;
+  MODIFY `codProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17045;
 
 --
 -- AUTO_INCREMENT de la tabla `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `codNote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `codNote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT de la tabla `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `codTask` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
+  MODIFY `codTask` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=329;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

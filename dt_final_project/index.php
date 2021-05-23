@@ -2,13 +2,18 @@
 <html>
 	<head>
 		<title>Index</title>		
-		<meta charset = "UTF-8">
+		<meta charset = "UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 		<link href="./css/index.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="./js/menuFunction.js"></script>
 	</head>
 	<body>
 	<header>
 		<h1>Tasker</h1>
-		<nav id="links">
+		<nav id="links" class="topnav">
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
 			<a href="./">Home</a>
 			<a href="./pages/about.php">About</a>
 			<a href="./pages/login.php">Login</a>
@@ -44,10 +49,10 @@
 			</article>
 		</section>
 		<footer>
-			<div><p>Members area</p><br><a href="./pages/login.php">Login</a><br><a href="./pages/passwdRecovery.php">Forgot password?</a></div>
-			<div><p>Join us</p><br><a href="./pages/createAccount.php">Create account</a></div>
-			<div><p>Legal</p><br><a href="./pages/terms.php">Terms of service</a><br><a href="./pages/privacy.php">Private policy</a></div>
-			<div><p>Support</p><br><a href="./pages/about.php">About</a></div>
+			<div><p>Members area</p><a href="./pages/login.php">Login</a><br><a href="./pages/passwdRecovery.php">Forgot password?</a></div>
+			<div><p>Join us</p><a href="./pages/createAccount.php">Create account</a></div>
+			<div><p>Legal</p><a href="./pages/terms.php">Terms of service</a><br><a href="./pages/privacy.php">Private policy</a></div>
+			<div><p>Support</p><a href="./pages/about.php">About</a></div>
 			<div><p>&copy; Copyright 2021 Tasker</p></div>
 		</footer>
 	</body>

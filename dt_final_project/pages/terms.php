@@ -5,8 +5,11 @@
 <html>
 	<head>
 		<title>Terms of service</title>		
-		<meta charset = "UTF-8">
+        <meta charset = "UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 		<link href="../css/terms.css" rel="stylesheet" type="text/css">
+        <link href="../css/header-footer.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="../js/menuFunction.js"></script>
 	</head>
 <body>
     <section class="main">

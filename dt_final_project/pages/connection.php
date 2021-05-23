@@ -208,27 +208,12 @@ function countTasks($cod){
 }
 
 function getTasks($cod){
-	//This function gets the message code from the table recieve where the user code from the table matches the code passed by param
 	$connection_string='mysql:dbname=dt_final_project;host=127.0.0.1';
 	$u='root';
 	$k='';
 	try{
 		$bd=new PDO($connection_string,$u,$k);
 		$sql="select * from tasks where codUser=$cod;";
-		$all=$bd->query($sql);
-		return $all;
-	}catch(PDOException $e){
-		echo "Error in the database: ".$e->getMessage();
-	}
-}
-
-function getDateCalendar($cod) {
-	$connection_string='mysql:dbname=dt_final_project;host=127.0.0.1';
-	$u='root';
-	$k='';
-	try{
-		$bd=new PDO($connection_string,$u,$k);
-		$sql="select date from tasks where codUser=$cod;";
 		$all=$bd->query($sql);
 		return $all;
 	}catch(PDOException $e){
@@ -298,7 +283,6 @@ function countNotes($cod){
 }
 
 function getNotes($cod){
-	//This function gets the message code from the table recieve where the user code from the table matches the code passed by param
 	$connection_string='mysql:dbname=dt_final_project;host=127.0.0.1';
 	$u='root';
 	$k='';
@@ -358,7 +342,6 @@ function countProducts($cod){
 }
 
 function getList($cod){
-	//This function gets the message code from the table recieve where the user code from the table matches the code passed by param
 	$connection_string='mysql:dbname=dt_final_project;host=127.0.0.1';
 	$u='root';
 	$k='';
@@ -373,7 +356,6 @@ function getList($cod){
 }
 
 function deleteProducts($cod){
-	//This function gets the message code from the table recieve where the user code from the table matches the code passed by param
 	$connection_string='mysql:dbname=dt_final_project;host=127.0.0.1';
 	$u='root';
 	$k='';

@@ -1,15 +1,23 @@
 section.main {
+    background:#fff;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 5px 10px 18px #888888;
     align-items: center;
-	margin: 15% 30% 5% 30%;
+	margin: 0% 30% 5% 30%;
     border: 3px solid red;
+    min-width: 200px;
 }
 
 section.main article {
     align-self: flex-start;
+    margin: 1.2em;
+    font-size: 1.3rem;
 }
 
 #next {
     text-align: right;
+    margin-top: 2rem;
 }
 
 #next input[type=submit] {
@@ -21,3 +29,9 @@ section.main article {
     font-family: tasker;
     font-size: 1rem;
 }
+
+@media screen and (max-width: 800px) {
+    section.main {
+        margin: 0% 20% 5% 20%;
+    }
+  }

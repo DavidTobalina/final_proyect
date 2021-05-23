@@ -384,6 +384,28 @@ body {
 	text-decoration: none;
 	display: block;
 }
+
+.dropdownCalendar {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropdownCalendar-content {
+	text-align: start;
+	display: none;
+	position: absolute;
+	font-size: 1.3rem;
+	color: black;
+	background-color: white;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 1rem;
+	z-index: 1;
+  }
+  
+  .dropdownCalendar:hover .dropdownCalendar-content {
+	display: block;
+  }
   
 .show {
 	display: block;
@@ -391,4 +413,93 @@ body {
 
 .amount {
 	margin-left: 1rem;
+}
+
+@media (max-width: 1350px) {
+	#inside > div:first-child {
+		font-size: 1.1vw;
+	}
+}
+
+@media (max-width: 992px) {
+	#inside {
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 4rem 15% 4rem 15%;
+	}
+
+	#inside > div:first-child {
+		width: 27%;
+		margin-bottom: 2rem;
+		font-size: 1.5vw;
+	}
+
+	#inside > div:last-child {
+		width: 80%;
+	}
+}
+
+@media (max-width: 768px) {
+	#inside {
+		margin: 4rem 10% 4rem 10%;
+	}
+
+	#inside > div:first-child {
+		font-size: 0.7rem;
+	}
+
+	#container {
+		grid-template-columns: none;
+ 		grid-template-rows: 10% 90%;
+	}
+
+	#menu {
+		height: 6rem;
+	}
+
+	.menu {
+		display: flex;
+	}
+
+	.dropdown {
+		position: absolute;
+		top: 0;
+		right: 0;
+		float: none;
+		margin: 0.4rem;
+	}
+
+	.dropbtn {
+		width: 4rem;
+		height: 4rem;
+		border-radius: 4rem;
+	}
+
+	#content h1 {
+		display: none;
+	}
+
+	#inside > #calendar > table {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 450px) {
+	#inside {
+		margin: 4rem 5% 4rem 5%;
+	}
+
+	#inside > div:first-child {
+		font-size: 2.5vw;
+	}
+
+	.dropdown {
+		float: right;
+		position: relative;
+		margin: 1rem;
+	}
+
+	#inside > #calendar > table {
+		font-size: 1.1rem;
+	}
 }

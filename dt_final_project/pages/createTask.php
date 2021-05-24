@@ -17,8 +17,10 @@
     }
 ?>
 <h2>Create task</h2>
-<form action = "./main.php" method = "POST">
-    <input type="text" id="i" name="i" maxlength="30" placeholder="I want to..." required><br>
+<form action = "./main.php" method = "POST" autocomplete="off">
+    <div id="auto" class="suggestions">
+        <input type="text" id="i" name="i" maxlength="30" placeholder="I want to..." required>
+    </div><br>
     On: <input type="date" id="d" name="d" value="<?php echo $today;?>" min="<?php echo $today;?>" max="<?php echo $nextYear;?>" required><br>
     At: <input type="time" id="t" name="t" value="<?php echo $nowH.':'.$nowM;?>" required><br>
     <input type = "submit" value="Next">

@@ -40,11 +40,46 @@ document.addEventListener("DOMContentLoaded", () => {
         xhttp.onreadystatechange = function() {
           if(this.readyState==4 && this.status==200) {
             document.querySelector("#inside > div:last-child").innerHTML=this.response;
+            suggestions();
           }
         };
         xhttp.open("GET", "../pages/createTask.php", true);
         xhttp.send();
       });
+    }
+
+    function suggestions() {
+      window.onclick = function(e) {
+        if(e.target != document.getElementById('i')) {
+            var container = document.getElementById("suggestionsContainer");
+            if(container) container.parentElement.removeChild(container);
+            return;
+        } else {
+            if(document.getElementById("i").value.length>0 || document.getElementById("suggestionsContainer")) return;
+            createSuggestions();
+        }
+      }
+      document.getElementById("i").addEventListener("input", function() {
+          if(document.getElementById("i").value.length > 0){
+              if(document.getElementById("suggestionsContainer")) document.getElementById("suggestionsContainer").parentElement.removeChild(document.getElementById("suggestionsContainer"));
+          }else{
+              createSuggestions();
+          }
+      });
+      function createSuggestions() {
+          var suggestions = ["play football","go shopping","do homework","clean the house", "go to the doctor", "go to the swiming pool"];
+          var cont = document.createElement("div");
+          cont.id = "suggestionsContainer";
+          for(var i = 0; i < suggestions.length; i++) {
+              var ele = document.createElement("div");
+              ele.innerHTML = suggestions[i];
+              cont.appendChild(ele);
+              ele.addEventListener("click", function() {
+                  document.getElementById('i').value = this.innerHTML;
+              });
+          }
+          document.getElementById("auto").appendChild(cont);
+      }
     }
   
     //Charge create task page at main when clicking create task

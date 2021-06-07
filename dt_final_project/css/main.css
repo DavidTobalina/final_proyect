@@ -1,0 +1,535 @@
+@font-face{
+	font-family: tasker;
+	src: url("./Louis-George-Cafe-Italic.woff");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+	font-family: tasker;
+}
+
+#container{
+	display: grid;
+	grid-template-columns: 1fr 5fr;
+	height: 100vh;
+}
+
+#menu{
+	height: 100%;
+	box-shadow: 3px 5px 11px #888888;
+}
+
+.menu
+{
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+#menu > .menu >li
+{
+  cursor: pointer;
+  color: black;
+  display: block;
+  padding: 30px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-bottom: 2px solid gainsboro;
+}
+
+#menu > .menu >li:hover:not(.active) 
+{
+  background-color: gainsboro;
+}
+
+#content {
+	background-image: url("../images/mountains.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#content h1 {
+	margin: 3rem;
+	padding: 1rem;
+	display: inline-block;
+	background-color: white;
+	box-shadow: 3px 5px 11px #888888;
+}
+
+#inside{
+	display: flex;
+	justify-content: space-between;
+	margin: 4rem 20% 4rem 20%;
+}
+
+.n{
+	margin: auto;
+	max-width: 1000px;
+	border: 1px solid grey;
+	padding: 1rem;
+	box-shadow: 3px 5px 6px #888888;
+}
+
+.n > p{
+	word-wrap: break-word;
+}
+
+#inside > div{
+	padding: 1rem;
+	background-color: white;
+	box-shadow: 3px 5px 11px #888888;
+}
+
+.days{
+	margin-bottom: 1rem;
+}
+
+.days > h3{
+	color: #d8311e;
+}
+
+#inside > #calendar{
+	position: relative;
+	width: 100%;
+	height: auto;
+	color: black;
+	background-color: white;
+	border-radius: 0;
+	text-align: left;
+	cursor: default;
+}
+
+.button {
+	cursor: pointer;
+	align-items: center;
+	display: inline-block;
+	justify-content: center;
+	padding: 0.6rem;
+}
+
+.button > div{
+	display: inline-block;
+}
+
+#calendar > button:nth-child(2){
+	position: absolute;
+	right: 0;
+	margin-right: 1rem;
+}
+
+.arrow {
+	background-color: transparent;
+	height: 1.3rem;
+	width: 1.3rem;
+}
+
+.leftButton
+{
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	transform: translateX(25%) rotate(45deg);
+}
+
+.rightButton {
+	border-right: 2px solid black;
+	border-top: 2px solid black;
+	transform: translateX(-25%) rotate(45deg);
+}
+
+#inside > #calendar > h2{
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+#inside > #calendar > table{
+	font-size: 1.8rem;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+#inside > div:first-child{
+	width: 17%;
+	height: 3rem;
+	color: white;
+	background-color: #d8311e;
+	border-radius: 2rem;
+	text-align: center;
+	cursor: pointer;
+}
+
+#inside > div:last-child{
+	width: 60%;
+}
+
+#inside > div:last-child > h2{
+	font-size: 180%;
+	margin-bottom: 1rem;
+}
+
+#inside > div:last-child > form{
+	margin: 2rem;
+	font-size: 1.2rem;
+	position: relative;
+	padding-bottom: 1.3rem;
+}
+
+#inside > div:last-child > form > input{
+	margin-bottom: 0.7rem;
+	font-size: 1rem;
+}
+
+#inside > div:last-child > form > textarea {
+	resize: none;
+}
+
+#inside > div:last-child > form > input[type=submit] {
+    color: white;
+    padding:0.7rem 1.8rem;
+	margin-top: 1rem;
+    background:#d8311e; 
+    border: none;
+    cursor:pointer;
+    font-family: tasker;
+    font-size: 1rem;
+	position: absolute;
+	right: 0;
+}
+
+#list > h2{
+	font-size: 180%;
+	margin-bottom: 2rem;
+}
+
+#product {
+	border: 0px;
+	height: 1.5rem;
+}
+
+#add {
+	height: 1.5rem;
+	width: 1.5rem;
+	border-radius: 1.5rem;
+	background-image: url("../images/plus.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: rgb(241, 231, 231);
+	float: left;
+	margin-right: 1rem;
+	cursor: pointer;
+}
+
+#products {
+	margin-top: 0.7rem;
+	margin-bottom: 0.7rem;
+	padding-top: 0.7rem;
+	padding-bottom: 0.7rem;
+	display: flex;
+	justify-content: space-between;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	width: 100%;
+}
+
+.product {
+	border: 1px solid grey;
+	padding: 0.5rem;
+	line-height: 1.4rem;
+	cursor: pointer;
+}
+
+.product >img{
+	height: 1.4rem;
+}
+
+#cont > .product {
+	display: inline-block;
+	margin: 0.7rem;
+}
+
+#inside > div:last-child > .product {
+	display: flex;
+	flex-wrap: wrap;
+  	align-items: center;
+	cursor: auto;
+	margin-bottom: 1rem;
+	font-size: 1.3rem;
+	line-height: 0rem;
+}
+
+#inside > div:last-child > .product > img {
+	height: 2rem;
+}
+
+.contTotal {
+	margin-bottom: 0.5rem;
+}
+
+.contProduct {
+	width: 60%;
+	display: inline-block;
+}
+
+.contCant {
+	width: 40%;
+	display: inline-block;
+}
+
+.task > p{
+	display: inline-block;
+}
+
+.check {
+	height: 1.5rem;
+	width: 1.5rem;
+	background-image: url("../images/comprobado.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	cursor: pointer;
+	margin-left: auto;
+}
+
+.checkTask {
+	display: inline-block;
+	height: 1.5rem;
+	width: 1.5rem;
+	background-image: url("../images/comprobado.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	cursor: pointer;
+	margin-left: 1.6rem;
+}
+
+.trash {
+	height: 1.5rem;
+	width: 1.5rem;
+	background-image: url("../images/trash.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	cursor: pointer;
+	margin-left: auto;
+}
+
+.crossed{
+	text-decoration: line-through;
+	color: red;
+}
+
+.notCrossed{
+	text-decoration: none;
+	color: black;
+}
+
+.hiddenSpan1{
+	display: none;
+}
+
+.hiddenSpan2{
+	display: none;
+}
+
+#next {
+	text-decoration: none;
+	color: white;
+    padding:0.7rem 1.8rem; 
+    background:#d8311e; 
+    border: none;
+    cursor:pointer;
+    font-family: tasker;
+    font-size: 1rem;
+	float: right;
+	margin-top: 1rem;
+}
+
+.dropdown {
+	float: right;
+	position: relative;
+	margin: 1rem;
+}
+
+.dropbtn {
+	width: 5rem;
+	height: 5rem;
+	border-radius: 5rem;
+	cursor: pointer;
+	background-image: url("../images/user.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+  
+.dropdown-content {
+	background-color: white;
+	display: none;
+	position: absolute;
+	min-width: 160px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	right: 0;
+	z-index: 1;
+}
+  
+.dropdown-content a {
+	padding: 0.6rem 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdownCalendar {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropdownCalendar-content {
+	text-align: start;
+	display: none;
+	position: absolute;
+	font-size: 1.3rem;
+	color: black;
+	background-color: white;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 1rem;
+	z-index: 1;
+  }
+  
+  .dropdownCalendar:hover .dropdownCalendar-content {
+	display: block;
+  }
+  
+.show {
+	display: block;
+}
+
+.amount {
+	margin-left: 1rem;
+}
+
+.suggestions {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 1rem;
+  }
+  
+  input#i {
+	padding: 10px;
+	font-size: 1rem;
+	width: 100%;
+  }
+  
+  #suggestionsContainer {
+	  border: 1px solid grey;
+	  z-index: 99;
+	  position: absolute;
+	  background-color: white;
+	  width: 100%;
+	  max-height: 8rem;
+	  overflow-y: scroll;
+  }
+  
+  #suggestionsContainer > div {
+	  padding: 0.3rem;
+	  cursor: pointer;
+  }
+  
+  #suggestionsContainer > div:hover {
+	  background-color: lightgray;
+  }
+
+@media (max-width: 1350px) {
+	#inside > div:first-child {
+		font-size: 1.1vw;
+	}
+}
+
+@media (max-width: 992px) {
+	#inside {
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 4rem 15% 4rem 15%;
+	}
+
+	#inside > div:first-child {
+		width: 27%;
+		margin-bottom: 2rem;
+		font-size: 1.5vw;
+	}
+
+	#inside > div:last-child {
+		width: 80%;
+		overflow: scroll;
+	}
+}
+
+@media (max-width: 768px) {
+	#inside {
+		margin: 4rem 10% 4rem 10%;
+	}
+
+	#inside > div:first-child {
+		font-size: 0.7rem;
+	}
+
+	#container {
+		grid-template-columns: none;
+ 		grid-template-rows: 10% ;
+	}
+
+	#menu {
+		height: 6rem;
+	}
+
+	.menu {
+		display: flex;
+	}
+
+	.dropdown {
+		position: absolute;
+		top: 0;
+		right: 0;
+		float: none;
+		margin: 0.4rem;
+	}
+
+	.dropbtn {
+		width: 4rem;
+		height: 4rem;
+		border-radius: 4rem;
+	}
+
+	#content h1 {
+		display: none;
+	}
+
+	#inside > #calendar > table {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 450px) {
+	#inside {
+		margin: 4rem 5% 4rem 5%;
+	}
+
+	#inside > div:first-child {
+		font-size: 2.5vw;
+	}
+
+	.dropdown {
+		float: right;
+		position: relative;
+		margin: 1rem;
+	}
+
+	#inside > #calendar > table {
+		font-size: 1.1rem;
+	}
+}

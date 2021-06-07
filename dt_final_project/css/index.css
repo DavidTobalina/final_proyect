@@ -1,0 +1,220 @@
+@font-face{
+	font-family: tasker;
+	src: url("./Louis-George-Cafe-Italic.woff");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction:column;
+	background-image: url('../images/fondo.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: tasker;
+	padding-top: 16rem;
+}
+
+header {
+	background: #fff;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding:1em;
+	display: flex;
+	justify-content:space-between;	
+	flex-direction:row;
+	flex-wrap:wrap;
+	align-items:center;
+}
+
+header h1 {
+	font-size: 5.5rem;
+	color: #d8311e;
+}
+
+#links {
+	display: flex;
+	align-items:center;
+	height: 5rem;
+}
+
+#links a {
+	display: block;
+	float: left;
+	border: 3px solid #d8311e;
+	color:black;
+	text-align: center;
+	text-decoration: none;
+	padding: 1em;
+	margin: 0.5rem;
+	height: 3.5rem;
+	width: 7rem;
+	transition: width 0.7s, height 0.7s, line-height 0.7s;
+	box-shadow: 3px 5px 11px #888888;
+}
+
+#links a:hover {
+	color: #d8311e;
+	height: 4rem;
+	width: 8rem;
+}
+
+section.main {
+	display: flex;
+	flex-direction: column;
+	margin: 0% 20% 5% 20%;
+	min-width: 250px;
+}
+
+section.main article {
+	padding: 2rem;
+	background-color: white;
+	margin: 1.2em;
+	font-size: 1.2rem;
+	box-shadow: 5px 10px 18px #888888;
+}
+
+section.main article:first-child {
+	font-size: 1.5rem;
+}
+
+section.main > article > h2,h3 {
+	margin-bottom: 1rem;
+}
+
+section.main > article > p {
+	margin-bottom: 0.6rem;
+}
+
+section.main > article > img {
+	width: 70%;
+}
+
+section.main > article:last-child > img {
+	width: 100%;
+}
+
+section.main > article > div > img {
+	width: 50%;
+	float: left;
+}
+
+footer{
+	margin-top: auto;
+	display: flex;
+	justify-content:space-around;
+	align-items:center;
+	height: 10rem;
+	width: 100%;
+	background:#fff;
+	font-weight: 1000;
+	font-size: 1.1rem;
+}
+
+footer p {
+	color: #d8311e;
+	margin-bottom: 0.5rem;
+}
+
+footer a {
+	color: black;
+}
+
+a:hover {
+	color: blue;
+}
+
+  nav.topnav {
+	overflow: hidden;
+  }
+  
+  #links > a.icon {
+	display: none;
+  }
+  
+  @media screen and (max-width: 680px) {
+	header h1 {
+		font-size: 3rem;
+	}
+	#links {
+		display: block;
+		height: auto;
+	}
+	#links a {
+		display: none;
+		float: none;
+		border: none;
+		color:black;
+		text-align: start;
+		text-decoration: none;
+		padding: 0em;
+		margin: 0rem;
+		height: auto;
+		width: auto;
+		transition-property: none;
+		box-shadow: none;
+	}
+	#links a:hover {
+		color: unset;
+		height: unset;
+		width: unset;
+	}
+	section.main > article > div > img {
+		width: 100%;
+		float: none;
+	}
+	#links.topnav > .icon > a:not(:first-child) {display: none;}
+	#links.topnav > .icon {
+	  	display: block;
+	}
+  }
+
+  @media screen and (max-width: 1200px) {
+	body {
+		padding-top: 14rem;
+	}
+	section.main > article > img {
+		width: 100%;
+	}
+  }
+
+  @media screen and (max-width: 760px) {
+	body {
+		padding-top: 12rem;
+	}
+	footer {
+		height: auto;
+		flex-direction: column;
+		justify-content: center;
+		align-content: space-around;
+		padding-top: 1rem;
+	}
+
+	footer > div {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+  }
+
+  @media screen and (max-width: 680px) {
+	body {
+		padding-top: 9rem;
+	}
+	#links.responsive {position: relative;}
+	#links.responsive > .icon {
+	  float: right;
+	}
+	#links.responsive > a {
+	  float: none;
+	  display: block;
+	  text-align: left;
+	}
+  }
